@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class UIMainScene : MonoBehaviour
 {
@@ -72,5 +75,9 @@ public class UIMainScene : MonoBehaviour
             m_CurrentContent = content;
             InfoPopup.Name.text = content.GetName();
         }
+    }
+    public void UIMainBackToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
